@@ -5,4 +5,4 @@ Opinionated template repo with my preferred tech stack:
 - Web Components
 - Vanilla JS
 - Open Props CSS
-- Supabase - backend + edge finction provider
+- Supabase - backend + edge function provider
