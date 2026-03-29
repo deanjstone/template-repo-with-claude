@@ -10,16 +10,16 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Replace placeholder files, initialize the Vite project, and configure all dev tooling so every subsequent phase starts from a working `npm run dev`.
 
-- [ ] Replace `.gitignore` with a Node/Vite-appropriate version (remove Jekyll ignores)
-- [ ] Rename `.github/dependabot-pkg-vers.yml` → `.github/dependabot.yml`; set `package-ecosystem: "npm"` and add a GitHub Actions ecosystem entry
-- [ ] `npm init` / create `package.json` with project metadata
-- [ ] Install and configure **Vite** (vanilla JS template)
-- [ ] Install and configure **Biome** (`biome.json` — formatting + linting rules)
-- [ ] Install and configure **Vitest** (`vitest.config.js`)
-- [ ] Install and configure **Playwright** (`playwright.config.js`, install browsers)
-- [ ] Add npm scripts: `dev`, `build`, `preview`, `lint`, `lint:fix`, `test`, `test:e2e`
-- [ ] Create minimal `index.html` + `src/main.js` that renders "Hello World"
-- [ ] Update `README.md` with setup instructions (`git clone`, `npm i`, `npm run dev`)
+- [x] Replace `.gitignore` with a Node/Vite-appropriate version (remove Jekyll ignores)
+- [x] Rename `.github/dependabot-pkg-vers.yml` → `.github/dependabot.yml`; set `package-ecosystem: "npm"` and add a GitHub Actions ecosystem entry
+- [x] `npm init` / create `package.json` with project metadata
+- [x] Install and configure **Vite** (vanilla JS template)
+- [x] Install and configure **Biome** (`biome.json` — formatting + linting rules)
+- [x] Install and configure **Vitest** (`vitest.config.js`)
+- [x] Install and configure **Playwright** (`playwright.config.js`, install browsers)
+- [x] Add npm scripts: `dev`, `build`, `preview`, `lint`, `lint:fix`, `test`, `test:e2e`
+- [x] Create minimal `index.html` + `src/main.js` that renders "Hello World"
+- [x] Update `README.md` with setup instructions (`git clone`, `npm i`, `npm run dev`)
 
 **Done when:** `npm run dev` serves a page, `npm run lint` passes, `npm run test` exits cleanly, and `npm run build` produces `dist/`.
 
