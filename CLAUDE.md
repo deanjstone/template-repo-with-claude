@@ -83,6 +83,7 @@ supabase/
 | `/new-component` | Scaffold a new Vanilla JS Web Component with co-located test |
 | `/new-edge-function` | Scaffold a new Supabase Edge Function (Deno/TypeScript) |
 | `/run-tests` | Run unit + E2E tests and summarise results |
+| `/implement-phase` | Implement a ROADMAP phase end-to-end: issues → branch → code → close |
 
 ---
 
@@ -94,3 +95,72 @@ Claude Code enforces quality gates via `PreToolUse` hooks in `.claude/settings.j
 - **Pre-push:** `npm test` — blocks push if any Vitest unit test fails
 
 Run `npm run lint:fix` and `npm test` locally before committing to avoid hook failures.
+
+---
+
+## GitHub Issue Workflow
+
+This is the standard for creating and managing GitHub issues for each ROADMAP phase.
+Follow it exactly when implementing any phase — use `/implement-phase` to automate it.
+
+### Labels
+
+| Applied to | Labels |
+|-----------|--------|
+| Parent (phase) issue | `Roadmap` + `Phase N` |
+| Sub-issues (tasks) | `Phase N` only |
+
+### Issue Titles
+
+- **Parent:** `Phase N: <Phase Name>` — matches the ROADMAP heading exactly
+- **Sub-issues:** `Phase N: <Task Name>` — short, imperative
+
+### Parent Issue Body
+
+```
+## Goal
+<one-sentence objective from ROADMAP>
+
+## Checklist
+- [ ] Top-level task 1
+  - sub-detail
+- [ ] Top-level task 2
+
+## Done when
+- <acceptance criterion from ROADMAP "Done when" section>
+
+## Depends on
+Phase N-1 (#<parent-issue-number>)
+```
+
+### Sub-Issue Body
+
+```
+<brief description of the task>
+
+- required deliverable 1
+- required deliverable 2
+
+Part of #<parent-issue-number>
+```
+
+### Branch Naming
+
+```
+claude/implement-phase-N-<kebab-goal>-<shortid>
+```
+
+Example: `claude/implement-phase-2-roadmap-pI1Y9`
+
+### Workflow Steps
+
+1. **Create issues** — parent + sub-issues if they don't already exist
+2. **Announce branch** — comment on parent and each sub-issue:
+   `Development branch: \`<branch-name>\``
+3. **Implement** — work through sub-issues in order; verify each before closing
+4. **Validate and close sub-issues** — comment `**Validation passed — closing.**` with
+   ✅-prefixed list of verified deliverables, then close with `state_reason: completed`
+5. **Close parent** — comment summarising all sub-issues with ✅, then close with
+   `state_reason: completed`
+6. **Update ROADMAP.md** — mark all phase checklist items as `[x]`
+7. **Commit and push** — message format: `Implement Phase N: <Name> (#parent)`
