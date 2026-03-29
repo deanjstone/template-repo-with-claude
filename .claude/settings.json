@@ -1,0 +1,49 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(npm run dev)",
+			"Bash(npm run build)",
+			"Bash(npm run preview)",
+			"Bash(npm run lint)",
+			"Bash(npm run lint:fix)",
+			"Bash(npm test)",
+			"Bash(npm run test:e2e)",
+			"Bash(npm install*)",
+			"Bash(npm ci)",
+			"Bash(npx *)",
+			"Bash(git add*)",
+			"Bash(git commit*)",
+			"Bash(git push*)",
+			"Bash(git pull*)",
+			"Bash(git fetch*)",
+			"Bash(git status)",
+			"Bash(git diff*)",
+			"Bash(git log*)",
+			"Bash(git checkout*)",
+			"Bash(git branch*)"
+		],
+		"deny": []
+	},
+	"hooks": {
+		"PreToolUse": [
+			{
+				"matcher": "Bash",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bash -c 'CMD=$(cat | jq -r \".command // empty\"); if echo \"$CMD\" | grep -qE \"^git commit\"; then npx @biomejs/biome check --staged; fi'"
+					}
+				]
+			},
+			{
+				"matcher": "Bash",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bash -c 'CMD=$(cat | jq -r \".command // empty\"); if echo \"$CMD\" | grep -qE \"^git push\"; then npm test; fi'"
+					}
+				]
+			}
+		]
+	}
+}
