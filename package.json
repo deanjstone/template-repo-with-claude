@@ -18,5 +18,9 @@
     "jsdom": "^29.0.1",
     "vite": "^6.0.7",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@vaadin/router": "^2.0.1",
+    "open-props": "^1.7.23"
   }
 }

@@ -52,7 +52,7 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Establish the SPA shell, client-side routing, component base classes, and Open Props design tokens so feature work has a foundation.
 
-- [ ] Set up folder structure:
+- [x] Set up folder structure:
   ```
   src/
     components/    ← reusable Web Components
@@ -63,14 +63,14 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
   supabase/
     functions/     ← Edge Functions (Deno/TS)
   ```
-- [ ] Install **Open Props** and create `src/styles/global.css` (reset, tokens, base typography)
-- [ ] Install **@vaadin/router** and create `src/router.js` with route definitions
-- [ ] Create `<app-shell>` root component (nav bar, outlet for router)
-- [ ] Create placeholder page components: `<page-home>`, `<page-login>`, `<page-not-found>`
-- [ ] Establish Web Component conventions:
+- [x] Install **Open Props** and create `src/styles/global.css` (reset, tokens, base typography)
+- [x] Install **@vaadin/router** and create `src/router.js` with route definitions
+- [x] Create `<app-shell>` root component (nav bar, outlet for router)
+- [x] Create placeholder page components: `<page-home>`, `<page-login>`, `<page-not-found>`
+- [x] Establish Web Component conventions:
   - Base pattern: class extending `HTMLElement`, Shadow DOM, adopted stylesheets
   - One component per file, kebab-case naming, co-located styles
-- [ ] Write first unit tests for router config and a sample component
+- [x] Write first unit tests for router config and a sample component
 
 **Done when:** `npm run dev` renders the app shell, navigating between `/`, `/login`, and an unknown path shows the correct page, and `npm test` passes.
 
