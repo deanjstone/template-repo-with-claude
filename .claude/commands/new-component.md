@@ -12,25 +12,25 @@ Then create the following two files:
 
 ```js
 class <PascalName> extends HTMLElement {
-	constructor() {
-		super();
-		this.attachShadow({ mode: "open" });
-	}
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-	connectedCallback() {
-		this.render();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	render() {
-		this.shadowRoot.innerHTML = `
-			<style>
-				:host {
-					display: block;
-				}
-			</style>
-			<slot></slot>
-		`;
-	}
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          display: block;
+        }
+      </style>
+      <slot></slot>
+    `;
+  }
 }
 
 customElements.define("<kebab-name>", <PascalName>);
@@ -47,24 +47,24 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import "./<kebab-name>.js";
 
 describe("<PascalName>", () => {
-	let element;
+  let element;
 
-	beforeEach(() => {
-		element = document.createElement("<kebab-name>");
-		document.body.appendChild(element);
-	});
+  beforeEach(() => {
+    element = document.createElement("<kebab-name>");
+    document.body.appendChild(element);
+  });
 
-	afterEach(() => {
-		element.remove();
-	});
+  afterEach(() => {
+    element.remove();
+  });
 
-	it("renders without error", () => {
-		expect(element).toBeDefined();
-		expect(element.shadowRoot).not.toBeNull();
-	});
+  it("renders without error", () => {
+    expect(element).toBeDefined();
+    expect(element.shadowRoot).not.toBeNull();
+  });
 });
 ```
 
 ---
 
-After creating both files, run `npm run lint:fix` to ensure formatting matches project conventions (tabs, double quotes, 100-char line width).
+After creating both files, run `npm run lint:fix` to ensure formatting matches project conventions (2 spaces, double quotes, 100-char line width).

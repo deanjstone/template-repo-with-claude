@@ -14,26 +14,26 @@ Then create the following file:
 import { corsHeaders } from "../_shared/cors.ts";
 
 Deno.serve(async (req: Request) => {
-	// Handle CORS preflight
-	if (req.method === "OPTIONS") {
-		return new Response(null, { headers: corsHeaders });
-	}
+  // Handle CORS preflight
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
 
-	try {
-		const body = await req.json();
+  try {
+    const body = await req.json();
 
-		// TODO: implement function logic
+    // TODO: implement function logic
 
-		return new Response(JSON.stringify({ data: null, error: null }), {
-			headers: { ...corsHeaders, "Content-Type": "application/json" },
-			status: 200,
-		});
-	} catch (error) {
-		return new Response(JSON.stringify({ data: null, error: error.message }), {
-			headers: { ...corsHeaders, "Content-Type": "application/json" },
-			status: 500,
-		});
-	}
+    return new Response(JSON.stringify({ data: null, error: null }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      status: 200,
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ data: null, error: error.message }), {
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+      status: 500,
+    });
+  }
 });
 ```
 
@@ -43,8 +43,8 @@ Also create the shared CORS helper if it does not already exist:
 
 ```ts
 export const corsHeaders = {
-	"Access-Control-Allow-Origin": "*",
-	"Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 ```
 

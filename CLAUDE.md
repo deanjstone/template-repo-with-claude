@@ -43,7 +43,7 @@ supabase/
   - `connectedCallback` for initial render
   - `customElements.define("kebab-name", ClassName)`
   - One component per directory, filename matches element name
-- **Indentation:** Tabs
+- **Indentation:** 2 spaces
 - **Line width:** 100 characters
 - **Quotes:** Double quotes
 - **Trailing commas:** ES5 style (objects and arrays, not function params)
