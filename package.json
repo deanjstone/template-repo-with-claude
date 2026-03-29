@@ -1,0 +1,22 @@
+{
+	"name": "template-repo-with-claude",
+	"version": "0.1.0",
+	"description": "Opinionated starter template: Vite + Vanilla JS Web Components + Open Props + Supabase",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"test": "vitest run",
+		"test:e2e": "playwright test"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@playwright/test": "1.56.1",
+		"jsdom": "^29.0.1",
+		"vite": "^6.0.7",
+		"vitest": "^2.1.8"
+	}
+}
