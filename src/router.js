@@ -18,6 +18,14 @@ export const routes = [
       if (session) return commands.redirect("/");
     },
   },
+  {
+    path: "/todos",
+    component: "page-todos",
+    action: async (_context, commands) => {
+      const session = await getSession();
+      if (!session) return commands.redirect("/login");
+    },
+  },
   { path: "(.*)", component: "page-not-found" },
 ];
 
