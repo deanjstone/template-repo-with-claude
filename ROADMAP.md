@@ -80,15 +80,15 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Connect to a remote Supabase project and implement a working auth flow (sign up, log in, log out, protected routes).
 
-- [ ] Install `@supabase/supabase-js`
-- [ ] Create `src/services/supabase.js` — initialize client from env vars (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`)
-- [ ] Add `.env.example` documenting required variables (actual `.env` stays gitignored)
-- [ ] Create `src/services/auth.js` — sign up, sign in (email/password), sign out, `onAuthStateChange` listener
-- [ ] Build `<page-login>` with sign-in / sign-up form
-- [ ] Implement auth-guarded routing (redirect unauthenticated users to `/login`)
-- [ ] Add auth state to `<app-shell>` (show/hide nav items, user menu)
-- [ ] Write unit tests for auth service (mock Supabase client)
-- [ ] Write Playwright E2E test for the login → redirect → dashboard flow
+- [x] Install `@supabase/supabase-js`
+- [x] Create `src/services/supabase.js` — initialize client from env vars (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`)
+- [x] Add `.env.example` documenting required variables (actual `.env` stays gitignored)
+- [x] Create `src/services/auth.js` — sign up, sign in (email/password), sign out, `onAuthStateChange` listener
+- [x] Build `<page-login>` with sign-in / sign-up form
+- [x] Implement auth-guarded routing (redirect unauthenticated users to `/login`)
+- [x] Add auth state to `<app-shell>` (show/hide nav items, user menu)
+- [x] Write unit tests for auth service (mock Supabase client)
+- [x] Write Playwright E2E test for the login → redirect → dashboard flow
 
 **Done when:** A user can sign up, log in, see a protected page, log out, and get redirected — tested end-to-end.
 
