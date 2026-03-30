@@ -28,6 +28,17 @@
     "deny": []
   },
   "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c '[ -d node_modules ] || npm install && [ -f .env ] || { echo \"⚠ .env not found — copy .env.example to .env and fill in your Supabase credentials\"; }'",
+            "statusMessage": "Setting up project environment"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
