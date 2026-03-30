@@ -3,6 +3,7 @@ import { onAuthStateChange, signOut } from "../../services/auth.js";
 import "../../pages/home-page/home-page.js";
 import "../../pages/login-page/login-page.js";
 import "../../pages/not-found-page/not-found-page.js";
+import "../../pages/todos-page/todos-page.js";
 
 class AppShell extends HTMLElement {
   #subscription = null;
@@ -53,6 +54,7 @@ class AppShell extends HTMLElement {
       </style>
       <nav>
         <a href="/">Home</a>
+        <a href="/todos">Todos</a>
         <div class="spacer"></div>
         <div id="user-info">
           <span id="user-email"></span>

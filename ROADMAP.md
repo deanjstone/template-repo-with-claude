@@ -98,13 +98,13 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Demonstrate the full data pattern: Supabase table, RLS policies, CRUD UI, and an Edge Function — giving future projects a copy-paste reference.
 
-- [ ] Document example table schema in `supabase/README.md` (e.g., `todos` table with RLS)
-- [ ] Create `src/services/todos.js` — CRUD operations via Supabase client (`select`, `insert`, `update`, `delete`)
-- [ ] Build `<page-todos>` — list, add, edit, delete todos (demonstrates data binding, optimistic UI)
-- [ ] Create a Supabase Edge Function (`supabase/functions/hello/index.ts`) as a reference example
-- [ ] Wire a button or action in the UI to invoke the Edge Function
-- [ ] Write unit tests for the CRUD service
-- [ ] Write Playwright E2E test for creating and deleting a todo
+- [x] Document example table schema in `supabase/README.md` (e.g., `todos` table with RLS)
+- [x] Create `src/services/todos.js` — CRUD operations via Supabase client (`select`, `insert`, `update`, `delete`)
+- [x] Build `<page-todos>` — list, add, edit, delete todos (demonstrates data binding, optimistic UI)
+- [x] Create a Supabase Edge Function (`supabase/functions/hello/index.ts`) as a reference example
+- [x] Wire a button or action in the UI to invoke the Edge Function
+- [x] Write unit tests for the CRUD service
+- [x] Write Playwright E2E test for creating and deleting a todo
 
 **Done when:** Authenticated user can perform full CRUD on todos; the Edge Function responds; unit and E2E tests pass.
 
