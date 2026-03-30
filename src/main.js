@@ -1,3 +1,2 @@
-document.querySelector("#app").innerHTML = `
-	<h1>Hello World</h1>
-`;
+import "./styles/global.css";
+import "./components/app-shell/app-shell.js";

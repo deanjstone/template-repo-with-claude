@@ -1,0 +1,35 @@
+@import "open-props/style";
+@import "open-props/normalize";
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--gray-9);
+  background: var(--gray-0);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: var(--size-3);
+  padding: var(--size-3) var(--size-5);
+  background: var(--gray-1);
+  border-bottom: 1px solid var(--gray-3);
+}
+
+nav a {
+  color: var(--indigo-6);
+  text-decoration: none;
+  font-weight: var(--font-weight-5);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: var(--size-5);
+}
