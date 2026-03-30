@@ -114,21 +114,21 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Automate quality gates and deployment so every PR is checked and merging to `main` ships to production.
 
-- [ ] Create `.github/workflows/ci.yml`:
+- [x] Create `.github/workflows/ci.yml`:
   - Trigger: pull request to `main`
   - Steps: install → lint (Biome) → unit test (Vitest) → build → E2E test (Playwright)
   - Upload Playwright report as artifact
-- [ ] Create `.github/workflows/deploy.yml`:
+- [x] Create `.github/workflows/deploy.yml`:
   - Trigger: push to `main`
   - Deploy to **Vercel** (via Vercel CLI or GitHub integration)
-- [ ] Configure Vercel project:
+- [x] Configure Vercel project:
   - Build command: `npm run build`
   - Output directory: `dist`
   - SPA rewrite rule: all routes → `index.html`
   - Environment variables: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
-- [ ] Enable Vercel preview deploys on PRs
-- [ ] Add CI status badge to `README.md`
-- [ ] Final `README.md` polish: project overview, quick start, architecture diagram (text), environment setup, available scripts, deployment notes
+- [x] Enable Vercel preview deploys on PRs
+- [x] Add CI status badge to `README.md`
+- [x] Final `README.md` polish: project overview, quick start, architecture diagram (text), environment setup, available scripts, deployment notes
 
 **Done when:** A PR triggers CI checks that must pass before merge; merging to `main` auto-deploys to Vercel; preview URLs generate on PRs.
 
