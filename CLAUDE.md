@@ -81,6 +81,7 @@ supabase/
 | Command | Description |
 |---------|-------------|
 | `/new-component` | Scaffold a new Vanilla JS Web Component with co-located test |
+| `/new-page` | Scaffold a route-level page component and register the route |
 | `/new-edge-function` | Scaffold a new Supabase Edge Function (Deno/TypeScript) |
 | `/run-tests` | Run unit + E2E tests and summarise results |
 | `/implement-phase` | Implement a ROADMAP phase end-to-end: issues → branch → code → close |
@@ -89,12 +90,25 @@ supabase/
 
 ## Git Hooks (Claude Code)
 
-Claude Code enforces quality gates via `PreToolUse` hooks in `.claude/settings.json`:
+Claude Code enforces quality gates via hooks in `.claude/settings.json`:
 
+- **Session start:** Runs `npm install` if `node_modules` is missing; warns if `.env` is absent
 - **Pre-commit:** `npx @biomejs/biome check --staged` — blocks commit if lint or format fails
 - **Pre-push:** `npm test` — blocks push if any Vitest unit test fails
 
 Run `npm run lint:fix` and `npm test` locally before committing to avoid hook failures.
+
+---
+
+## Extending This Template
+
+To add a new feature end-to-end:
+
+1. **Page** — Use `/new-page` to scaffold the component, test, and route
+2. **Service** — Create `src/services/<name>.js` with Supabase CRUD operations + co-located `.test.js`
+3. **Component** — Use `/new-component` for any reusable UI pieces
+4. **E2E test** — Add `e2e/<feature>.spec.js` for the complete user flow
+5. **Edge Function** — Use `/new-edge-function` if server-side logic is needed
 
 ---
 

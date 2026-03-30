@@ -29,19 +29,21 @@ Each phase builds on the last and ends in a usable state. GitHub issues are crea
 
 **Goal:** Make the repo Claude Code-native so that Claude operates under project conventions from the first prompt.
 
-- [ ] Author `CLAUDE.md` with:
+- [x] Author `CLAUDE.md` with:
   - Tech stack summary and architecture overview
   - File/folder conventions (naming, component structure)
   - Coding conventions (no frameworks, vanilla WC patterns, Open Props tokens)
   - Commands cheat-sheet (`npm run …`)
   - Testing expectations (unit for logic, E2E for flows)
-- [ ] Create `.claude/settings.json` with allowed tools and approved shell commands
-- [ ] Add Claude Code **hooks**:
+- [x] Create `.claude/settings.json` with allowed tools and approved shell commands
+- [x] Add Claude Code **hooks**:
   - Pre-commit: `npx @biomejs/biome check --staged` (lint + format)
   - Pre-push: `npm test` (Vitest)
-- [ ] Add Claude Code **slash commands** (`.claude/commands/`):
+  - Session start: `npm install` + `.env` check
+- [x] Add Claude Code **slash commands** (`.claude/commands/`):
   - `new-component.md` — scaffold a Web Component
   - `new-edge-function.md` — scaffold a Supabase Edge Function
+  - `new-page.md` — scaffold a route-level page component
   - `run-tests.md` — run unit + E2E and report results
 
 **Done when:** Opening the repo in Claude Code shows conventions in context; hooks fire on commit and push; slash commands are available.

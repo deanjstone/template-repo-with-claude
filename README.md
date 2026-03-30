@@ -71,6 +71,18 @@ Get these values from your [Supabase project settings](https://supabase.com/dash
 | `npm test` | Run Vitest unit tests |
 | `npm run test:e2e` | Run Playwright end-to-end tests |
 
+## Extending This Template
+
+Use the built-in Claude Code slash commands to scaffold new features:
+
+| Command | What it creates |
+|---|---|
+| `/new-page` | Page component + test + route registration |
+| `/new-component` | Reusable Web Component + test |
+| `/new-edge-function` | Supabase Edge Function (Deno/TS) |
+
+Typical workflow: `/new-page` for the route, create a service in `src/services/`, add an E2E test in `e2e/`, then run `/run-tests` to verify.
+
 ## Deployment
 
 This project deploys to **Vercel** automatically:
