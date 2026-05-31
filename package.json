@@ -13,7 +13,7 @@
     "test:e2e": "playwright test"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.15",
+    "@biomejs/biome": "^2.4.16",
     "@playwright/test": "1.60.0",
     "jsdom": "^29.1.1",
     "vite": "^8.0.14",
