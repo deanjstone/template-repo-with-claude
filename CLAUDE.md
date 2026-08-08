@@ -1,5 +1,9 @@
 # CLAUDE.md
 
+## Status
+
+**ARCHIVED 2026-08-08.** Dormant since 2026-03-30 (all activity since was Dependabot auto-merge); stack (vanilla JS, Biome, Playwright, Vercel) is stale against the current TS/Vite/Tailwind default. Superseded by a decision-doc-first repo structure/docs standard — see [deanjstone/argus#147](https://github.com/deanjstone/argus/issues/147) — rather than a copyable template repo. No successor repo.
+
 Project conventions, tech stack, and tooling for Claude Code.
 
 ---
